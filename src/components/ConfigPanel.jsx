@@ -1,4 +1,4 @@
-import { RefreshIcon, CameraIcon, SettingsIcon, InfoIcon } from './Icons';
+import { RefreshIcon, CameraIcon, SettingsIcon, InfoIcon, GitHubIcon } from './Icons';
 import { AvatarStyle } from '../utils/constants';
 
 export const ConfigPanel = ({ config, setConfig, onGenerate, onScreenshotMode }) => {
@@ -96,6 +96,15 @@ export const ConfigPanel = ({ config, setConfig, onGenerate, onScreenshotMode })
           <InfoIcon size={14} className="mt-0.5 flex-shrink-0" />
           <p>提示：进入截图模式后,背景将变黑,手机居中。点击屏幕任意位置可退出。</p>
         </div>
+
+        <a 
+          href="https://github.com/ronger-x/wechat-react" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 text-gray-600 hover:text-gray-900 transition-colors py-2 text-sm font-medium"
+        >
+          <GitHubIcon size={20} />
+        </a>
       </div>
     </div>
   );
