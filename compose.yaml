@@ -1,0 +1,17 @@
+services:
+  wechat-react:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wechat-react
+    ports:
+      - "3400:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - wechat-network
+
+networks:
+  wechat-network:
+    driver: bridge
