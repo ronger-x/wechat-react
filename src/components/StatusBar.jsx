@@ -15,11 +15,11 @@ export const StatusBar = ({ wifiStrength = 3 }) => {
   }, []);
 
   return (
-    <div className="h-[47px] px-6 pl-7 flex items-end justify-between select-none absolute top-0 w-full z-30 overflow-hidden">
-      <div className="font-semibold text-black text-[16px] leading-none mb-[9px] ml-1 font-ios tracking-tight">
+    <div className="h-[47px] px-6 flex items-end justify-between select-none absolute top-0 w-full z-30 overflow-hidden">
+      <div className="font-semibold text-black text-[16px] leading-none mb-[10px] font-ios tracking-tight w-[80px]">
         {time}
       </div>
-      <div className="flex items-center gap-[6px] text-black mb-[10px] mr-1">
+      <div className="flex items-center gap-[6px] text-black mb-[10px]">
         <SignalIcon />
         <WifiIcon strength={wifiStrength} />
         <BatteryIcon />

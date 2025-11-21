@@ -2,7 +2,7 @@ import { TabWeChat, UsersIcon, CompassIcon, UserIcon } from './Icons';
 
 export const TabBar = () => {
   return (
-    <div className="h-[83px] bg-[#F7F7F7] border-t-[0.5px] border-[#B2B2B2]/50 flex items-start pt-[6px] justify-around absolute bottom-0 w-full z-20 pb-8 backdrop-blur-xl bg-opacity-95">
+    <div className="h-[83px] bg-[#F7F7F7] border-t-[0.5px] border-[#B2B2B2]/50 flex items-start pt-[6px] justify-around absolute bottom-0 w-full z-20 pb-8">
       <div className="flex flex-col items-center gap-0.5 w-16 cursor-pointer group relative">
         <div className="relative w-7 h-7">
           <TabWeChat active={true} />
