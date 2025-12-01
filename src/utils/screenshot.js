@@ -85,8 +85,14 @@ export const captureLongScreenshot = async (phoneElement, options = {}) => {
     chatListElement.style.height = 'auto';
     chatListElement.style.maxHeight = 'none';
     
+    // 强制所有图片立即加载
+    const images = phoneElement.querySelectorAll('img');
+    images.forEach(img => {
+      img.loading = 'eager';
+    });
+
     // 等待DOM完全更新和渲染
-    await waitForRender(300);
+    await waitForRender(500);
     
     // 再次等待确保所有图片加载
     await waitForImages(phoneElement);
@@ -107,7 +113,7 @@ export const captureLongScreenshot = async (phoneElement, options = {}) => {
       pixelRatio,
       width: phoneWidth,
       height: phoneHeight,
-      cacheBust: true, // 避免缓存问题
+      cacheBust: false, // 避免重复请求导致失败，依赖 img 标签的 crossOrigin
       skipAutoScale: false,
       style: {
         margin: '0',
@@ -162,6 +168,12 @@ export const captureScreenshot = async (phoneElement, options = {}) => {
   } = options;
 
   try {
+    // 强制所有图片立即加载
+    const images = phoneElement.querySelectorAll('img');
+    images.forEach(img => {
+      img.loading = 'eager';
+    });
+
     await waitForImages(phoneElement);
     await waitForRender();
 
@@ -171,7 +183,7 @@ export const captureScreenshot = async (phoneElement, options = {}) => {
       quality,
       backgroundColor,
       pixelRatio,
-      cacheBust: true,
+      cacheBust: false,
       style: {
         margin: '0',
         padding: '0',

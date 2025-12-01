@@ -11,7 +11,13 @@ export const ChatList = ({ chats, screenshotMode = false }) => {
         <div key={chat.id} className="flex h-[74px] bg-white w-full relative hover:bg-gray-50 transition-colors cursor-pointer active:bg-[#EDEDED]">
           <div className="w-[76px] h-full flex items-start pt-[12px] justify-center flex-shrink-0 pl-1">
             <div className="w-[48px] h-[48px] shadow-[0_0_1px_rgba(0,0,0,0.1)] rounded-[6px] overflow-hidden">
-              <img src={chat.avatarUrl} alt={chat.name} className="w-full h-full object-cover" loading="lazy" />
+              <img 
+                src={chat.avatarUrl} 
+                alt={chat.name} 
+                className="w-full h-full object-cover" 
+                loading="lazy" 
+                crossOrigin="anonymous"
+              />
             </div>
           </div>
           <div className="flex-1 h-full flex flex-col pt-[14px] pr-4 min-w-0 relative">
